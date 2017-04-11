@@ -1,0 +1,39 @@
+{
+  "author": "Marcus Griep",
+  "classifications": [ "Web", "Freya" ],
+  "name": "Freya on Kestrel",
+  "tags": {
+    "language": "F#",
+    "type": "project"
+  },
+  "identity": "Freya.Template",
+  "groupIdentity": "Freya",
+  "shortName": "freya",
+  "sourceName": "FreyaTemplate",
+  // This allows using the `-n` option to create a new directory
+  "preferNameDirectory": true,
+  "symbols": {
+      "freyaCore": {
+          "type": "parameter",
+          "datatype": "choice",
+          "defaultValue": "async",
+          "choices": [
+              {
+                  "choice": "async",
+                  "description": "Use Async from FSharp.Core"
+              },
+              {
+                  "choice": "hopac",
+                  "description": "Use Job from Hopac"
+              }
+          ],
+          "description": "Chooses the underlying concurrency construct"
+      },
+    "serverGc": {
+        "type": "parameter",
+        "datatype": "bool",
+        "defaultValue": "true",
+        "description": "Use the server garbage collector"
+    }
+  }
+}
