@@ -24,8 +24,6 @@ let helloMachine = freyaMachine {
   handleOk sayHello
 }
 
-let router = freyaRouter {
+let root = freyaRouter {
   resource "/hello{/name}" helloMachine
 }
-
-let root = UriTemplateRouter.Freya router
