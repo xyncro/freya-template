@@ -4,7 +4,7 @@
         <id>Freya.Template</id>
         <version>0.1.0</version>
         <description>Templates for Freya on Kestrel</description>
-        <authors>Marcus Griep;Andrew Cherry;Ryan Riley</authors>
+        <authors>Marcus Griep, Andrew Cherry, Ryan Riley</authors>
         <language>en-US</language>
         <projectUrl>https://freya.io</projectUrl>
         <licenseUrl>https://github.com/xyncro/freya-template/blob/master/LICENSE.md</licenseUrl>
