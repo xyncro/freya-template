@@ -1,5 +1,6 @@
 build_script:
   - ps: dotnet --info
+  - ps: nuget.exe pack
   - ps: dotnet new --install .
     
   - ps: mkdir testA
