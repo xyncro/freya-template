@@ -1,21 +1,18 @@
-version: 4.0.0-aci-{build}
-
 build_script:
-  - ps: |
-    dotnet --info
-    dotnet new --install . || exit 1
+  - ps: dotnet --info
+  - ps: dotnet new --install .
     
-    mkdir testA
-    pushd testA
-    dotnet new freya || exit 1
-    dotnet restore || exit 1
-    dotnet build -c Release || exit 1
-    popd
+  - ps: mkdir testA
+  - ps: pushd testA
+  - ps: dotnet new freya
+  - ps: dotnet restore
+  - ps: dotnet build -c Release
+  - ps: popd
 
-    mkdir testB
-    pushd testB
-    dotnet new freya -f hopac || exit 1
-    dotnet restore || exit 1
-    dotnet build -c Release || exit 1
+  - ps: mkdir testB
+  - ps: pushd testB
+  - ps: dotnet new freya -f hopac
+  - ps: dotnet restore
+  - ps: dotnet build -c Release
     
 test: off
