@@ -2,6 +2,7 @@ module Api
 
 open Freya.Core
 open Freya.Machines.Http
+open Freya.Types.Http
 open Freya.Routers.Uri.Template
 
 let routeName = Freya.Optic.get (Route.atom_ "name")
