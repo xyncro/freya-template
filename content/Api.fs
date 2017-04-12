@@ -1,21 +1,23 @@
 module Api
 
 open Freya.Core
-open Freya.Optics.Http
-open Freya.Types.Http
-open Freya.Machines
 open Freya.Machines.Http
 open Freya.Routers.Uri.Template
 
 let routeName = Freya.Optic.get (Route.atom_ "name")
 
-let sayHello = freya {
+let name = freya {
   let! nameO = routeName
-  let helloStr =
-    match nameO with
-    | Some name -> sprintf "Hello, %s!" name
-    | None -> "Hello, World!"
-  return Represent.text helloStr
+
+  match nameO with
+  | Some name -> return name
+  | None -> return "World"
+}
+
+let sayHello = freya {
+  let! name = name
+
+  return Represent.text (sprintf "Hello, %s!" name)
 }
 
 let helloMachine = freyaMachine {

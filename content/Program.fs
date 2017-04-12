@@ -12,4 +12,4 @@ let main argv =
   |> WebHost.configure configureApp
   |> WebHost.buildAndRun
 
-  0 // return an integer exit code
+  0
