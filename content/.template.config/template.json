@@ -13,7 +13,7 @@
   // This allows using the `-n` option to create a new directory
   "preferNameDirectory": true,
   "symbols": {
-    "freyaCore": {
+    "concurrency": {
       "type": "parameter",
       "datatype": "choice",
       "defaultValue": "async",
@@ -42,7 +42,8 @@
           "choice": "kestrel",
           "description": "Uses Kestrel as the underlying I/O framework"
         }
-      ]
+      ],
+      "description": "Chooses the underlying web I/O framework"
     },
     "serverGc": {
       "type": "parameter",
