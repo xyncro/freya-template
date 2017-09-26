@@ -5,10 +5,13 @@
 This template can be installed into the dotnet CLI template cache by using the
 following command:
 
-    dotnet new --install Freya.Template::*
+    dotnet new --install Freya.Template
 
 If you want to install a specific version of the Freya templates, you can do so
-by replacing `*` with the version you wish to install.
+by using `Freya.Template::<version>` with the version you wish to install.
+
+By default, this template creates a .NET Core 2.0 service hosted on Suave using
+the `Async` type for asynchrony and uses server garbage collection.
 
 ## Using the template
 
@@ -38,6 +41,10 @@ options can be exposed using `dotnet new freya --help`.
     -s|--serverGc     Use the server garbage collector
                       bool - Optional
                       Default: true
+
+    -ne|--netcore1.1  Configures template for .NET Core 1.1
+                      bool - Optional
+                      Default: false
 
 ## After creating a project
 
