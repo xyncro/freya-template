@@ -1,7 +1,7 @@
 {
   "author": "Marcus Griep",
   "classifications": [ "Web", "Freya" ],
-  "name": "Freya on Kestrel",
+  "name": "Freya",
   "tags": {
     "language": "F#",
     "type": "project"
@@ -13,27 +13,52 @@
   // This allows using the `-n` option to create a new directory
   "preferNameDirectory": true,
   "symbols": {
-      "freyaCore": {
-          "type": "parameter",
-          "datatype": "choice",
-          "defaultValue": "async",
-          "choices": [
-              {
-                  "choice": "async",
-                  "description": "Use Async from FSharp.Core"
-              },
-              {
-                  "choice": "hopac",
-                  "description": "Use Job from Hopac"
-              }
-          ],
-          "description": "Chooses the underlying concurrency construct"
-      },
+    "freyaCore": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "async",
+      "choices": [
+        {
+          "choice": "async",
+          "description": "Use Async from FSharp.Core"
+        },
+        {
+          "choice": "hopac",
+          "description": "Use Job from Hopac"
+        }
+      ],
+      "description": "Chooses the underlying concurrency construct"
+    },
+    "framework": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "suave",
+      "choices": [
+        {
+          "choice": "suave",
+          "description": "Uses Suave as the underlying I/O framework"
+        },
+        {
+          "choice": "kestrel",
+          "description": "Uses Kestrel as the underlying I/O framework"
+        }
+      ]
+    },
     "serverGc": {
-        "type": "parameter",
-        "datatype": "bool",
-        "defaultValue": "true",
-        "description": "Use the server garbage collector"
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Use the server garbage collector"
     }
-  }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(framework == \"suave\"",
+          "exclude": "KestrelInterop.fs"
+        }
+      ]
+    }
+  ]
 }

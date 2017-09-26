@@ -8,7 +8,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Api.fs" />
-    <Compile Include="KestrelInterop.fs" />
+    <Compile Include="KestrelInterop.fs" Condition="'$(framework)' == 'kestrel'" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
@@ -16,7 +16,8 @@
     <PackageReference Include="FSharp.Core" Version="4.*" />
     <PackageReference Include="Freya" Version="4.0.0-alpha-*" Condition="'$(freyaCore)' == 'async'"/>
     <PackageReference Include="Freya.Hopac" Version="4.0.0-alpha-*" Condition="'$(freyaCore)' == 'hopac'"/>
-    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Owin" Version="1.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.*" Condition="'$(framework)' == 'kestrel'" />
+    <PackageReference Include="Microsoft.AspNetCore.Owin" Version="1.*" Condition="'$(framework)' == 'kestrel'" />
+    <PackageReference Include="Suave" Version="*" Condition="'$(framework)' == 'suave'" />
   </ItemGroup>
 </Project>
