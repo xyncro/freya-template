@@ -36,11 +36,11 @@
       "choices": [
         {
           "choice": "suave",
-          "description": "Uses Suave as the underlying I/O framework"
+          "description": "Use Suave"
         },
         {
           "choice": "kestrel",
-          "description": "Uses Kestrel as the underlying I/O framework"
+          "description": "Use Kestrel from ASP.NET Core"
         }
       ],
       "description": "Chooses the underlying web I/O framework"

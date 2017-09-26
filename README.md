@@ -22,22 +22,22 @@ the template uses [Suave](https://suave.io) as the host web framework. These
 options can be exposed using `dotnet new freya --help`.
 
 
-    Freya on Kestrel (F#)
+    Freya (F#)
     Author: Marcus Griep
     Options:
     -c|--concurrency  Chooses the underlying concurrency construct
-                        async    - Use Async from FSharp.Core
-                        hopac    - Use Job from Hopac
-                    Default: async
+                          async    - Use Async from FSharp.Core
+                          hopac    - Use Job from Hopac
+                      Default: async
 
-    -f|--framework
-                        suave      - Uses Suave as the underlying I/O framework
-                        kestrel    - Uses Kestrel as the underlying I/O framework
-                    Default: suave
+    -f|--framework    Chooses the underlying web I/O framework
+                          suave      - Use Suave
+                          kestrel    - Use Kestrel from ASP.NET Core
+                      Default: suave
 
-    -s|--serverGc   Use the server garbage collector
-                    bool - Optional
-                    Default: true
+    -s|--serverGc     Use the server garbage collector
+                      bool - Optional
+                      Default: true
 
 ## After creating a project
 
