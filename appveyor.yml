@@ -12,7 +12,7 @@ build_script:
 
   - ps: mkdir testB
   - ps: pushd testB
-  - ps: dotnet new freya -f hopac
+  - ps: dotnet new freya -c hopac -f kestrel
   - ps: dotnet restore
   - ps: dotnet build -c Release
     
