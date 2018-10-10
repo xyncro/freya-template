@@ -17,3 +17,5 @@ build_script:
   - ps: dotnet build -c Release
     
 test: off
+artifacts:
+- path: '*.nupkg'
