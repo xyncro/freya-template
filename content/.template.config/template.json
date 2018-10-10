@@ -50,12 +50,6 @@
       "datatype": "bool",
       "defaultValue": "true",
       "description": "Use the server garbage collector"
-    },
-    "netcore1.1": {
-      "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "false",
-      "description": "Configures template for .NET Core 1.1"
     }
   },
   "sources": [
