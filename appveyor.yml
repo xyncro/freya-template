@@ -1,21 +1,8 @@
+image: Visual Studio 2017
 build_script:
-  - ps: dotnet --info
-  - ps: nuget.exe pack
-  - ps: dotnet new --install .
-    
-  - ps: mkdir testA
-  - ps: pushd testA
-  - ps: dotnet new freya
-  - ps: dotnet restore
-  - ps: dotnet build -c Release
-  - ps: popd
-
-  - ps: mkdir testB
-  - ps: pushd testB
-  - ps: dotnet new freya -c hopac -f kestrel
-  - ps: dotnet restore
-  - ps: dotnet build -c Release
-    
+- ps: |
+      .\build.ps1
+      if ($lastexitcode -ne 0){ exit $lastexitcode }
 test: off
 artifacts:
 - path: '*.nupkg'
